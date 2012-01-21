@@ -15,18 +15,24 @@ resolutions and on different devices.
 * Remove framify.js when a design is approved and your layout HTML and CSS is 
 practically done.
 
+## Requirements
+
+* [jQuery](http://jquery.com/) 1.3.2 or higher
+
 ## Demo
 
 Download: [example.html](https://github.com/artlawry/framify-jquery-plugin/blob/master/example.html).
+
 Live: [example.html](http://dl.dropbox.com/u/2241085/framify/example.html).
 
-Resize to watch the sections change location while maintaining a familiar
-wireframe styling.  Clicking the ƒ tab at the top will toggle the
-wireframe styles on and off, revealing the underlying HTML and CSS.
+* Resize to observe elements change location while maintaining a familiar 
+wireframe styling.
+* Click the ƒ tab at the top to toggle the wireframe styles on and off, 
+revealing the underlying HTML and CSS.
 
 ## Preparation
 
-First, load [jQuery](http://jquery.com/) and the framify plugin:
+First, load [jQuery](http://jquery.com/) 1.3.2 or higher and the framify plugin:
 
 ``` html
 <script src="jquery.min.js"></script>
