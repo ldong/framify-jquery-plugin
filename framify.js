@@ -379,6 +379,7 @@
 			$('.framify-radio-wireframe').each(function(){
 				var $canvas = $(this);
 				var $origin = $canvas.prev();
+				var checked = $origin.is(':checked');
 				
 				var offset = getElementOffset($origin[0]);
 				
@@ -391,15 +392,23 @@
 				ctx.fillStyle = 'rgba(0,0,0,.1)';
 				ctx.strokeStyle = 'rgba(0,0,0,.3)';
 				ctx.beginPath();
-				ctx.arc($canvas.width()/2, $canvas.width()/2, $canvas.width()/2-1, 0, Math.PI*2, true); 
+				ctx.arc($canvas.width()/2, $canvas.width()/2, $canvas.width()/2-0.5, 0, Math.PI*2, true); 
 				ctx.closePath();
 				ctx.fill();
 				ctx.stroke();
+				if (checked) {
+					ctx.fillStyle = 'rgba(0,0,0,.3)';
+					ctx.beginPath();
+					ctx.arc($canvas.width()/2, $canvas.width()/2, $canvas.width()/2-3, 0, Math.PI*2, true); 
+					ctx.closePath();
+					ctx.fill();
+				}
 			});
 			
 			$('.framify-checkbox-wireframe').each(function(){
 				var $canvas = $(this);
 				var $origin = $canvas.prev();
+				var checked = $origin.is(':checked');
 				
 				var offset = getElementOffset($origin[0]);
 				
@@ -412,11 +421,13 @@
 				ctx.fillRect(0, 0, $canvas.width(), $canvas.height());
 				ctx.strokeStyle = 'rgba(0,0,0,.3)';
 				ctx.strokeRect(0.5, 0.5, $canvas.width()-1, $canvas.height()-1);
-				ctx.moveTo(0, 0);
-				ctx.lineTo($canvas.width(), $canvas.height());
-				ctx.moveTo(0, $canvas.height());
-				ctx.lineTo($canvas.width(), 0);
-				ctx.stroke();
+				if (checked) {
+					ctx.moveTo(0, 0);
+					ctx.lineTo($canvas.width(), $canvas.height());
+					ctx.moveTo(0, $canvas.height());
+					ctx.lineTo($canvas.width(), 0);
+					ctx.stroke();
+				}
 			});
 			
 			$('.framify-section-identifier').each(function(){
