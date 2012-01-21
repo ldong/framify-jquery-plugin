@@ -183,6 +183,9 @@
 			$('audio').unbind('MozAudioAvailable').bind('MozAudioAvailable',function(){
 				$.framify('redraw');
 			});
+			$('input[type="radio"], input[type="checkbox"]').unbind('change').change(function(){
+				$.framify('redraw');
+			});
 			$(window).load(function(){
 				$.framify('redraw');
 			}); 
