@@ -1,5 +1,5 @@
 /*
- * framify 0.2.0
+ * framify 0.3.0
  * -----------------
  * Turns basic HTML and layout CSS into wireframes
  *
@@ -24,9 +24,9 @@
 	
 	var methods = {
 	
-		init : function(options){	
+		init : function(options){
 		
-			var settings = $.extend( {
+			var defaultOptions = {
 				'toggle': 1,
 				'toggle-class': 'styled',
 				
@@ -51,7 +51,76 @@
 				'canvas-exclude': '',
 				'image-exclude': '',
 				'form-exclude': ''
-			}, options);
+			};
+			
+			// validate argument values
+			
+			var validClass = /^[\w-]+$/;
+			var validNumber = /^(0|[1-9][0-9]?)$/;
+			var numberTooLarge = 100;
+			var validUnit = /^(0|[1-9][0-9]?)(\.[0-9]+)?(px|em|rem|%)$/
+			
+			if (typeof(options.toggle) != 'undefined') {
+				options.toggle = options.toggle ? 1 : 0;
+			}
+			
+			if (typeof(options['toggle-class']) != 'undefined') {
+				if (! options['toggle-class'].match(validClass)) {
+					options['toggle-class'] = defaultOptions['toggleClass'];
+				}
+			}
+			
+			if ( typeof(options.color) != 'undefined') {
+				options.color = options.color ? 1 : 0;
+			}
+			
+			if (typeof(options.grid) != 'undefined') {
+				if (! $(options.grid).length || $(options.grid).length > 1) {
+					options.grid = defaultOptions.grid;
+				}
+			}
+			
+			if ( typeof(options.columns) != 'undefined') {
+				if (! options.columns.match(validNumber) || parseInt(options.columns) >= numberTooLarge) {
+					options.columns = defaultOptions.columns;
+				}
+			}
+			
+			if ( typeof(options.gutter) != 'undefined') {
+				if (! options.gutter.match(validUnit)) {
+					options.gutter = defaultOptions.gutter;
+				}
+			}
+			
+			// no need to test sections
+			
+			if (typeof(options.table) != 'undefined') {
+				options.table = options.table ? 1 : 0;
+			}
+			
+			if (typeof(options.video) != 'undefined') {
+				options.video = options.video ? 1 : 0;
+			}
+			
+			if (typeof(options.audio) != 'undefined') {
+				options.audio = options.audio ? 1 : 0;
+			}
+			
+			if (typeof(options.canvas) != 'undefined') {
+				options.canvas = options.canvas ? 1 : 0;
+			}
+			
+			if (typeof(options.image) != 'undefined') {
+				options.image = options.image ? 1 : 0;
+			}
+			
+			if (typeof(options.form) != 'undefined') {
+				options.form = options.form ? 1 : 0;
+			}
+			
+			// no need to test *-exclude
+		
+			var settings = $.extend(defaultOptions, options);
 			
 			if (! $('#framify-styles').length) {
 				//base 64 styles to prevent need for linking to an external stylesheet

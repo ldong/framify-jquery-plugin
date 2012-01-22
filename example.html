@@ -185,8 +185,10 @@ body {
 #foot {
   float: left;
   width: 100%; }
-  #foot table {
-    width: 100%; }
+  #foot div div {
+    padding: 1em; }
+    #foot div div table {
+      width: 100%; }
 
 .column-content {
   margin: 15px;
@@ -216,14 +218,28 @@ body {
   #body #blog ol li {
     float: left;
     width: 100%; } }
+/* Appearance
+------------------------------------------------------------*/
+.styled a {
+  color: red; }
+  .styled a:link, .styled a:visited, .styled a:hover, .styled a:active {
+    color: red; }
+.styled .column-content {
+  background-color: #ccc;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
 </style>
 </head>
 
-<body>
+<body class="styled">
 	<div id="grid">
     	<header id="head">
         	<div class="column-content">
-	        	<img src="http://placehold.it/900x200/808080/000" />
+	        	<img src="http://placehold.it/900x200/808080/000&text=Image" />
 	        	<nav>
 	        		<ul>
 	        			<li><a href="#">Navigation Link</a></li>
@@ -238,6 +254,12 @@ body {
         	</div>
         </header>
         <div id="body">
+        	<div id="video">
+        		<div class="column-content">
+					<video id="movie" preload="true" controls="true" poster="http://placehold.it/1920x1080/808080/000&text=Video">
+					</video>
+        		</div>
+        	</div>
         	<div id="blog">
             	<ol>
 		        	<li>
@@ -246,7 +268,7 @@ body {
 			                	<header>
 			                    	<h1>Entry Title</h1>
 			                    </header>
-			                    <img src="http://placehold.it/100x100/808080/000" />
+			                    <img src="http://placehold.it/100x100/808080/000&text=Image" />
 			                    <p>A summary or introductory paragraph for this entry.  Big enough to give an idea of the entry's content.  Small enough to remain unobtrusive.</p>
 			                    <a href="#">Full Article</a>
 			                </article>
@@ -258,7 +280,7 @@ body {
 			                	<header>
 			                    	<h1>Entry Title</h1>
 			                    </header>
-			                    <img src="http://placehold.it/100x100/808080/000" />
+			                    <img src="http://placehold.it/100x100/808080/000&text=Image" />
 			                    <p>A summary or introductory paragraph for this entry.  Big enough to give an idea of the entry's content.  Small enough to remain unobtrusive.</p>
 			                    <a href="#">Full Article</a>
 			                </article>
@@ -270,7 +292,7 @@ body {
 			                	<header>
 			                    	<h1>Entry Title</h1>
 			                    </header>
-			                    <img src="http://placehold.it/100x100/808080/000" />
+			                    <img src="http://placehold.it/100x100/808080/000&text=Image" />
 			                    <p>A summary or introductory paragraph for this entry.  Big enough to give an idea of the entry's content.  Small enough to remain unobtrusive.</p>
 			                    <a href="#">Full Article</a>
 			                </article>
@@ -282,7 +304,7 @@ body {
 			                	<header>
 			                    	<h1>Entry Title</h1>
 			                    </header>
-			                    <img src="http://placehold.it/100x100/808080/000" />
+			                    <img src="http://placehold.it/100x100/808080/000&text=Image" />
 			                    <p>A summary or introductory paragraph for this entry.  Big enough to give an idea of the entry's content.  Small enough to remain unobtrusive.</p>
 			                    <a href="#">Full Article</a>
 			                </article>
@@ -294,7 +316,7 @@ body {
 			                	<header>
 			                    	<h1>Entry Title</h1>
 			                    </header>
-			                    <img src="http://placehold.it/100x100/808080/000" />
+			                    <img src="http://placehold.it/100x100/808080/000&text=Image" />
 			                    <p>A summary or introductory paragraph for this entry.  Big enough to give an idea of the entry's content.  Small enough to remain unobtrusive.</p>
 			                    <a href="#">Full Article</a>
 			                </article>
@@ -306,7 +328,7 @@ body {
 			                	<header>
 			                    	<h1>Entry Title</h1>
 			                    </header>
-			                    <img src="http://placehold.it/100x100/808080/000" />
+			                    <img src="http://placehold.it/100x100/808080/000&text=Image" />
 			                    <p>A summary or introductory paragraph for this entry.  Big enough to give an idea of the entry's content.  Small enough to remain unobtrusive.</p>
 			                    <a href="#">Full Article</a>
 			                </article>
@@ -335,60 +357,62 @@ body {
         </div>
         <footer id="foot">
         	<div class="column-content">
-        		<table>
-        			<caption>A Table</caption>
-        			<thead>
-        				<tr>
-        					<th>Column Header</th>
-        					<th>Column Header</th>
-        					<th>Column Header</th>
-        					<th>Column Header</th>
-        					<th>Column Header</th>
-        				</tr>
-        			</thead>
-        			<tbody>
-        				<tr>
-        					<th>Row Header</th>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        				</tr>
-        				<tr>
-        					<th>Row Header</th>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        				</tr>
-        				<tr>
-        					<th>Row Header</th>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        				</tr>
-        				<tr>
-        					<th>Row Header</th>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        				</tr>
-        				<tr>
-        					<th>Row Header</th>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        					<td>Data Cell</td>
-        				</tr>
-        			</tbody>
-        			<tfoot>
-        				<tr>
-        					<td colspan="5">Footer Cell</td>
-        				</tr>
-        			</tfoot>
-        		</table>
+        		<div>
+	        		<table>
+	        			<caption>A Table</caption>
+	        			<thead>
+	        				<tr>
+	        					<th>Column Header</th>
+	        					<th>Column Header</th>
+	        					<th>Column Header</th>
+	        					<th>Column Header</th>
+	        					<th>Column Header</th>
+	        				</tr>
+	        			</thead>
+	        			<tbody>
+	        				<tr>
+	        					<th>Row Header</th>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        				</tr>
+	        				<tr>
+	        					<th>Row Header</th>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        				</tr>
+	        				<tr>
+	        					<th>Row Header</th>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        				</tr>
+	        				<tr>
+	        					<th>Row Header</th>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        				</tr>
+	        				<tr>
+	        					<th>Row Header</th>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        					<td>Data Cell</td>
+	        				</tr>
+	        			</tbody>
+	        			<tfoot>
+	        				<tr>
+	        					<td colspan="5">Footer Cell</td>
+	        				</tr>
+	        			</tfoot>
+	        		</table>
+        		</div>
             </div>
         </footer>
         <div style="clear:both;">
