@@ -244,6 +244,9 @@ $.framify({'audio': 0});
 Enables or disables conversion of ``<audio>`` tags to wireframe elements. 
 Combine with ``audio-exclude`` to target only specific audio.
 
+NOTE: Only ``<audio>``tags with the controls attribute set will actually
+be converted.
+
 ### audio-exclude
 
 default: ''

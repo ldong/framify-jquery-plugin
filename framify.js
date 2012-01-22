@@ -203,7 +203,7 @@
 			});
 			
 			if (settings.audio) {
-				$('audio').not(settings['audio-exclude']).addClass('framify-audio');
+				$('audio[controls]').not(settings['audio-exclude']).addClass('framify-audio');
 			}
 			$('.framify-audio').each(function(){
 				var $origin = $(this);
