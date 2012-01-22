@@ -1,5 +1,5 @@
 /*
- * framify 0.3.0
+ * framify 0.4.0
  * -----------------
  * Turns basic HTML and layout CSS into wireframes
  *
@@ -203,7 +203,7 @@
 			});
 			
 			if (settings.audio) {
-				$('audio').not(settings['audio-exclude']).addClass('framify-audio');
+				$('audio[controls]').not(settings['audio-exclude']).addClass('framify-audio');
 			}
 			$('.framify-audio').each(function(){
 				var $origin = $(this);

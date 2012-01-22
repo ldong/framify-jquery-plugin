@@ -18,6 +18,8 @@
 			'#blog .column-content,' +
 			'#form,' +
 			'#form .column-content,' +
+			'#audio,' +
+			'#audio .column-content,' +
 			'#foot,' +
 			'#foot .column-content';
 			
@@ -153,34 +155,37 @@ body {
         display: block;
         padding: 0 1em 1em;
         text-align: right; }
-  #body #form {
+  #body #sidebar {
     float: left;
     width: 25%; }
-    #body #form audio {
+    #body #sidebar #form {
+      float: left;
       width: 100%; }
-    #body #form ol {
-      margin-left: 1.5em;
-      list-style: disc; }
-    #body #form form {
-      padding: 1em; }
-      #body #form form label {
-        display: block; }
-      #body #form form #email-address, #body #form form #message {
-        margin-bottom: 1em;
-        display: block;
+      #body #sidebar #form form {
+        padding: 1em; }
+        #body #sidebar #form form label {
+          display: block; }
+        #body #sidebar #form form #email-address, #body #sidebar #form form #message {
+          margin-bottom: 1em;
+          display: block;
+          width: 100%; }
+        #body #sidebar #form form #email-address {
+          padding: .5em 0; }
+        #body #sidebar #form form #message {
+          padding: .5em 0 0 0; }
+        #body #sidebar #form form #action {
+          padding: .5em;
+          -webkit-border-radius: ".5em";
+          -khtml-border-radius: ".5em";
+          -moz-border-radius: ".5em";
+          -ms-border-radius: ".5em";
+          -o-border-radius: ".5em";
+          border-radius: ".5em"; }
+    #body #sidebar #audio {
+      float: left;
+      width: 100%; }
+      #body #sidebar #audio audio {
         width: 100%; }
-      #body #form form #email-address {
-        padding: .5em 0; }
-      #body #form form #message {
-        padding: .5em 0 0 0; }
-      #body #form form #action {
-        padding: .5em;
-        -webkit-border-radius: ".5em";
-        -khtml-border-radius: ".5em";
-        -moz-border-radius: ".5em";
-        -ms-border-radius: ".5em";
-        -o-border-radius: ".5em";
-        border-radius: ".5em"; }
 
 #foot {
   float: left;
@@ -204,14 +209,14 @@ body {
     #body #blog ol li {
       float: left;
       width: 50%; }
-  #body #form {
+  #body #sidebar {
     float: left;
     width: 33.333%; } }
 @media screen and (max-width: 768px) {
   #body #blog {
     float: left;
     width: 100%; }
-  #body #form {
+  #body #sidebar {
     float: left;
     width: 100%; } }
 @media screen and (max-width: 480px) {
@@ -256,7 +261,7 @@ body {
         <div id="body">
         	<div id="video">
         		<div class="column-content">
-					<video id="movie" preload="true" controls="true" poster="http://placehold.it/1920x1080/808080/000&text=Video">
+					<video controls="controls" poster="http://placehold.it/1920x1080/808080/000&text=Video">
 					</video>
         		</div>
         	</div>
@@ -336,23 +341,31 @@ body {
                 	</li>
                 </ol>
             </div>
-            <aside id="form">
-        		<div class="column-content">
-            		<h1>Contact</h1>
-	            	<form>
-	            		<label><input type="radio" name="radio" value="one" checked="checked" />One</label>
-	            		<label><input type="radio" name="radio" value="two" />Two</label>
-	            		<label><input type="radio" name="radio" value="three" />Three</label>
-	            		<label><input type="checkbox" name="checkbox" value="one" checked="checked" />One</label>
-	            		<label><input type="checkbox" name="checkbox" value="two" />Two</label>
-	            		<label><input type="checkbox" name="checkbox" value="three" />Three</label>
- 	            		<label for="email">Email Address</label>
-	            		<input name="email-address" id="email-address" type="text" />
-	            		<label for="message">Message</label>
-	            		<textarea name="message" id="message"></textarea>
-	            		<input name="action" id="action" type="reset" value="Send" />
-	            	</form>
-	            </div>
+            <aside id="sidebar">
+            	<div id="form">
+	        		<div class="column-content">
+	            		<h1>Contact</h1>
+		            	<form>
+		            		<label><input type="radio" name="radio" value="one" checked="checked" />One</label>
+		            		<label><input type="radio" name="radio" value="two" />Two</label>
+		            		<label><input type="radio" name="radio" value="three" />Three</label>
+		            		<label><input type="checkbox" name="checkbox" value="one" checked="checked" />One</label>
+		            		<label><input type="checkbox" name="checkbox" value="two" />Two</label>
+		            		<label><input type="checkbox" name="checkbox" value="three" />Three</label>
+	 	            		<label for="email">Email Address</label>
+		            		<input name="email-address" id="email-address" type="text" />
+		            		<label for="message">Message</label>
+		            		<textarea name="message" id="message"></textarea>
+		            		<input name="action" id="action" type="reset" value="Send" />
+		            	</form>
+		            </div>
+		        </div>
+            	<div id="audio">
+	        		<div class="column-content">
+	            		<audio controls="controls">
+	            		</audio>
+		            </div>
+		        </div>
             </aside>
         </div>
         <footer id="foot">

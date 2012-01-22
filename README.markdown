@@ -58,62 +58,57 @@ Remember, this is all about getting a responsive wireframe set up.
 I highly recommend using tools like [placehold.it](http://placehold.it) and 
 various text generation tools to create content before it's available.
 
-## Execution
+## Usage
 
-In its most simple form, framify can be called without any arguments and will 
+### Basic
+
+In its most simple form, framify can be called without any options and will 
 aggressively convert common block-level elements into bounded sections, as well 
 as converting media (images, video, audio) into wireframe components
 
 ``` javascript
 	$.framify();
 ```
-	
+
+### Targeted
+
 You can also call framify() on a selector. If used this way, each of the 
 elements the selector matches gets converted into a bound section.
 
 ``` javascript
 	$('header, footer, aside, #body').framify();
 ```
-	
+
 Similarly, the above can be achieved by passing a selector for the sections 
 into framify:
 
 ``` javascript
 	$.framify({'sections': 'header, footer, aside, #body'});
 ```
-	
+
+### Advanced
+
+Options may be passed into the framify function to control various aspects of
+the wireframe rendering (see below).
+
 Repeat calls to framify() destroy the existing wireframes and do not re-use the 
 previously used selectors, so you may wish to store your selectors for later 
 re-use:
 
 ``` javascript
-	var framifySections = 'header, footer, aside, #body';
-	$(framifySections).framify();
-		
-	// and later…
-		
-	$(framifySections).framify();
-```
-	
-## Arguments
-
-In addition to the ``sections`` argument, there are many more arguments that 
-can be passed in. Similarly, these values are not re-used between framify() 
-calls, so if you wish to re-use the same arguments later, save them in an 
-object:
-
-``` javascript
 var framifySections = 'header, footer, aside, #body';
-var framifyArguments = {
+var framifyOptions = {
 	'color': 0,
 	'images': 0
 };
-$(framifySections).framify(framifyArguments);
+$(framifySections).framify(framifyOptions);
 
 // and later…
 
-$(framifySections).framify(framifyArguments);
+$(framifySections).framify(framifyOptions);
 ```
+	
+## Options
 
 ### sections
 
@@ -249,6 +244,9 @@ $.framify({'audio': 0});
 Enables or disables conversion of ``<audio>`` tags to wireframe elements. 
 Combine with ``audio-exclude`` to target only specific audio.
 
+NOTE: Only ``<audio>``tags with the controls attribute set will actually
+be converted.
+
 ### audio-exclude
 
 default: ''
@@ -341,7 +339,7 @@ A selector of ``<table>`` tags not to convert into wireframes.
 In addition to converting a layout to wireframes, you may also specify a grid of columns
 that will be displayed behind the page content for alignment purposes.
 
-A grid will not be drawn unless the ``grid`` and ``columns`` arguments are specified
+A grid will not be drawn unless the ``grid`` and ``columns`` options are specified
 (grid has a default value). 
 
 ### grid
