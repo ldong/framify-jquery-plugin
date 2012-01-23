@@ -20,6 +20,8 @@
 			'#form .column-content,' +
 			'#audio,' +
 			'#audio .column-content,' +
+			'#canvas,' +
+			'#canvas .column-content,' +
 			'#foot,' +
 			'#foot .column-content';
 			
@@ -186,6 +188,9 @@ body {
       width: 100%; }
       #body #sidebar #audio audio {
         width: 100%; }
+    #body #sidebar #canvas {
+      float: left;
+      width: 100%; }
 
 #foot {
   float: left;
@@ -364,6 +369,11 @@ body {
 	        		<div class="column-content">
 	            		<audio controls="controls">
 	            		</audio>
+		            </div>
+		        </div>
+            	<div id="canvas">
+	        		<div class="column-content">
+	            		<canvas height="100" width="150"></canvas>
 		            </div>
 		        </div>
             </aside>
