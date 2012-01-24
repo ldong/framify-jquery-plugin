@@ -1,5 +1,5 @@
 /*
- * framify 0.5.0
+ * framify 0.6.0
  * -----------------
  * Turns basic HTML and layout CSS into wireframes
  *
