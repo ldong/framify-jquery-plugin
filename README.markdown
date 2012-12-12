@@ -1,18 +1,19 @@
-# framify: Responsive Wireframing in the Browser (a jQuery Plugin)
+# Framify: Responsive Wireframing in the Browser (a jQuery Plugin)
 
-Framify is a jQuery plugin that turns basic HTML, layout CSS, and CSS @media 
-queries into responsive, in-browser wireframes that a client can interact with.
+Framify is a jQuery plugin that turns basic HTML and responsive CSS into in-browser wireframes that a client can interact with.
 
-These wireframes can be configured to uniquely identify and color-code sections 
-identified by the developer/designer to aid in client communication and assist 
-in identifying how sections of a page change at various resolutions.
+## Purpose
+
+The purpose of Framify is to help clients and designers/developers communicate better through content-centric wireframes.
+
+These wireframes can be configured to uniquely identify and color-code sections identified by the developer/designer to aid in client communication and assist in identifying how sections of a page change at various resolutions.
 
 ## Benefits
 
 * Create one page instead of multiple physical/digital layouts.
-* Let clients see the wireframe as they will see the site: at different 
+* Let clients see the wireframe as they will see the site: at different
 resolutions and on different devices.
-* Remove framify.js when a design is approved and your layout HTML and CSS is 
+* Remove framify.js when a design is approved and your layout HTML and CSS is
 practically done.
 
 ## Requirements
@@ -25,9 +26,9 @@ Download: [example.html](https://github.com/artlawry/framify-jquery-plugin/blob/
 
 Live: [example.html](http://dl.dropbox.com/u/2241085/framify/example.html).
 
-* Resize to observe elements change location while maintaining a familiar 
+* Resize to observe elements change location while maintaining a familiar
 wireframe styling.
-* Click the ƒ tab at the top to toggle the wireframe styles on and off, 
+* Click the ƒ tab at the top to toggle the wireframe styles on and off,
 revealing the underlying HTML and CSS.
 
 ## Preparation
@@ -38,15 +39,15 @@ First, load [jQuery](http://jquery.com/) 1.3.2 or higher and the framify plugin:
 <script src="jquery.min.js"></script>
 <script src="framify.js"></script>
 ```
-	
+
 Next, create a DOM ready function in which to place your framify call:
 
 ``` html
 <script>
 	$(document).ready(function(){
-	
+
 		// your code here
-	
+
 	});
 </script>
 ```
@@ -55,15 +56,15 @@ Finally, create your structural HTML, layout CSS, and any media queries.
 Leave the display css off (borders, colors, text effects, rounded corners).
 Remember, this is all about getting a responsive wireframe set up.
 
-I highly recommend using tools like [placehold.it](http://placehold.it) and 
+I highly recommend using tools like [placehold.it](http://placehold.it) and
 various text generation tools to create content before it's available.
 
 ## Usage
 
 ### Basic
 
-In its most simple form, framify can be called without any options and will 
-aggressively convert common block-level elements into bounded sections, as well 
+In its most simple form, framify can be called without any options and will
+aggressively convert common block-level elements into bounded sections, as well
 as converting media (images, video, audio) into wireframe components
 
 ``` javascript
@@ -72,14 +73,14 @@ as converting media (images, video, audio) into wireframe components
 
 ### Targeted
 
-You can also call framify() on a selector. If used this way, each of the 
+You can also call framify() on a selector. If used this way, each of the
 elements the selector matches gets converted into a bound section.
 
 ``` javascript
 	$('header, footer, aside, #body').framify();
 ```
 
-Similarly, the above can be achieved by passing a selector for the sections 
+Similarly, the above can be achieved by passing a selector for the sections
 into framify:
 
 ``` javascript
@@ -91,8 +92,8 @@ into framify:
 Options may be passed into the framify function to control various aspects of
 the wireframe rendering (see below).
 
-Repeat calls to framify() destroy the existing wireframes and do not re-use the 
-previously used selectors, so you may wish to store your selectors for later 
+Repeat calls to framify() destroy the existing wireframes and do not re-use the
+previously used selectors, so you may wish to store your selectors for later
 re-use:
 
 ``` javascript
@@ -107,7 +108,7 @@ $(framifySections).framify(framifyOptions);
 
 $(framifySections).framify(framifyOptions);
 ```
-	
+
 ## Options
 
 ### sections
@@ -138,7 +139,7 @@ possible values: 0 or 1
 $.framify({'toggle': 0});
 ```
 
-Enables or disables the floating tab (top center) that toggles the wireframe 
+Enables or disables the floating tab (top center) that toggles the wireframe
 styles on and off.
 
 ### toggle-class
@@ -166,7 +167,7 @@ selectors begin with the toggle-class class:
 It is good practice to put this class on your body tag to begin with as framify
 will remove it if necessary. This is so that when you remove framify your styles
 will all appear as intended.
-	
+
 ### color
 
 default: 1
@@ -176,9 +177,9 @@ possible values: 0 or 1
 ``` javascript
 $.framify({'color': 0});
 ```
-	
-Enables or disables section coloring. When set to 0, all sections will be gray. 
-When set to 1, colors will cycle through gray, blue, green, yellow, orange, 
+
+Enables or disables section coloring. When set to 0, all sections will be gray.
+When set to 1, colors will cycle through gray, blue, green, yellow, orange,
 red, and purple before repeating if necessary.
 
 ### image
@@ -191,7 +192,7 @@ possible values: 0 or 1
 $.framify({'image': 0});
 ```
 
-Enables or disables conversion of ``<img>`` tags to wireframe elements. 
+Enables or disables conversion of ``<img>`` tags to wireframe elements.
 Combine with ``image-exclude`` to target only specific images.
 
 ### image-exclude
@@ -216,7 +217,7 @@ possible values: 0 or 1
 $.framify({'video': 0});
 ```
 
-Enables or disables conversion of ``<video>`` tags to wireframe elements. 
+Enables or disables conversion of ``<video>`` tags to wireframe elements.
 Combine with ``video-exclude`` to target only specific videos.
 
 ### video-exclude
@@ -241,7 +242,7 @@ possible values: 0 or 1
 $.framify({'audio': 0});
 ```
 
-Enables or disables conversion of ``<audio>`` tags to wireframe elements. 
+Enables or disables conversion of ``<audio>`` tags to wireframe elements.
 Combine with ``audio-exclude`` to target only specific audio.
 
 NOTE: Only ``<audio>``tags with the controls attribute set will actually
@@ -269,7 +270,7 @@ possible values: 0 or 1
 $.framify({'canvas': 0});
 ```
 
-Enables or disables conversion of ``<canvas>`` tags to wireframe elements. 
+Enables or disables conversion of ``<canvas>`` tags to wireframe elements.
 Combine with ``canvas-exclude`` to target only specific canvases.
 
 ### canvas-exclude
@@ -281,7 +282,7 @@ possible values: any CSS selector
 ``` javascript
 $.framify({'canvas-exclude': '#not-this-canvas'});
 ```
-	
+
 A selector of ``<canvas>`` tags not to convert into wireframes.
 
 ### form
@@ -294,7 +295,7 @@ possible values: 0 or 1
 $.framify({'form': 0});
 ```
 
-Enables or disables conversion of form input elements to wireframe elements. 
+Enables or disables conversion of form input elements to wireframe elements.
 Combine with ``form-exclude`` to target only specific form input elements.
 
 ### form-exclude
@@ -319,7 +320,7 @@ possible values: 0 or 1
 $.framify({'table': 0});
 ```
 
-Enables or disables conversion of ``<table>`` tags to wireframe elements. 
+Enables or disables conversion of ``<table>`` tags to wireframe elements.
 Combine with ``table-exclude`` to target only specific tables.
 
 ### table-exclude
@@ -333,14 +334,14 @@ $.framify({'table-exclude': '#not-this-table'});
 ```
 
 A selector of ``<table>`` tags not to convert into wireframes.
-				
+
 ## Grid, Columns, and Gutters
 
 In addition to converting a layout to wireframes, you may also specify a grid of columns
 that will be displayed behind the page content for alignment purposes.
 
 A grid will not be drawn unless the ``grid`` and ``columns`` options are specified
-(grid has a default value). 
+(grid has a default value).
 
 ### grid
 

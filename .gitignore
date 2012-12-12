@@ -36,3 +36,8 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Editor generatde files #
+##########################
+*.sublime-project
+*.sublime-workspace

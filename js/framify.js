@@ -252,8 +252,6 @@
     return [retOffsetLeft, retOffsetTop];
   };
 
-  // TODO - deal with different units (px, em, rem, %, pt, etc) for height
-  // TODO - break up function into smaller pieces
   /**
    * Generate visual representation of break points from media queries
    *
@@ -293,7 +291,10 @@
 
             // handle min/max device/non-device width queries
             rules = mediaQueryRules[i].match(c.validMQWidth) || [];
-            if (rules) {
+            if (
+              rules
+                && rules.length === mediaQueryRules[i].match(/\(/g).length
+            ) {
 
               parts = mediaQueryRules[i].match(/([a-z\-]+):/g);
               for (j = 0; j < parts.length; j += 1) {
@@ -420,7 +421,10 @@
 
             // handle min/max device/non-device height queries
             rules = mediaQueryRules[i].match(c.validMQHeight) || [];
-            if (rules) {
+            if (
+              rules
+                && rules.length === mediaQueryRules[i].match(/\(/g).length
+            ) {
 
               parts = mediaQueryRules[i].match(/([a-z\-]+):/g);
               for (j = 0; j < parts.length; j += 1) {
