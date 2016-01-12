@@ -23,7 +23,7 @@ practically done.
 
 Download: [example.html](https://github.com/artlawry/framify-jquery-plugin/blob/master/example.html).
 
-Live: [example.html](http://dl.dropbox.com/u/2241085/framify/example.html).
+Live: [example.html](http://htmlpreview.github.io/?https://github.com/artlawry/framify-jquery-plugin/blob/master/example.html).
 
 * Resize to observe elements change location while maintaining a familiar 
 wireframe styling.
